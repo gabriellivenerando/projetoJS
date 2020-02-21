@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+</head>
+
+<body>
+
+    <script>
+        /*
+        var produto = {id:"1", nome:"arroz", price: 2.50};
+        var carrinho = {produto: produto, quantidade:1, price:2.50};
+    
+        
+    function produto (id, nome, preco){
+        this.id = id;
+        this.nome = nome;
+        this.preco = preco;
+
+    }
+
+    function cartItem (produto, quantidade, preco){
+        banana = new produto ("bana", 1, 8.99);
+        uva = new produto ("uva", 2, 2.99)
+    }
+
+    */
+
+        class produto {
+            constructor(id, nome, preco) {
+                this.id = id;
+                this.nome = nome;
+                this.preco = preco;
+            }
+        }
+
+        class carrinhoItens {
+            constructor(produto, quantidade, preco) {
+                this.produto = produto;
+                this.quantidade = quantidade;
+                this.preco = preco;
+            }
+
+        }
+
+        const cartItem = [];
+
+
+
+        addItem = function (produto) {
+            cartItem.push(produto);
+        }
+
+        removeItem = function (produto) {
+            for (var i = 0; i < cartItem.length; i++) {
+                if (cartItem[i].nome == produto.nome) {
+                    cartItem.splice(i, 1);
+                }
+            }
+        }
+
+        calcularTotal = function (cartItem) {
+            var valorTotal = 0;
+            for (var i = 0; i < cartItem.length; i++) {
+                valorTotal = cartItem[i].preco + valorTotal;
+            }
+            return valorTotal;
+
+        }
+
+
+        uva = new produto(1, "uva", 2.5);
+        uvaitem = new carrinhoItens("uva", 1, 2.5)
+
+        laranja = new produto(2, "laranja", 2.5);
+        laranjaitem = new carrinhoItens(laranja, 1, 2.5)
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
